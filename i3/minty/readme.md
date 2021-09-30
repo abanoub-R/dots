@@ -1,6 +1,7 @@
 theme - minty
 
 for - i3
+
 dependencies:
 
 	JetBrains Mono - https://www.jetbrains.com/lp/mono/
