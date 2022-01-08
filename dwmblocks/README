@@ -1,0 +1,3 @@
+dwm status bar that uses scripts and has realtime updating
+
+NOTE : if updated forcefully via pkill, the CPU block will lag by 1 second due to the fact that it takes a second to average the utilization of all cores.
