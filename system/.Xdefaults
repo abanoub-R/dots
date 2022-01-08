@@ -1,5 +1,0 @@
-URxvt.background: 	#000000
-URxvt.foreground:	#ffffff
-URxvt.font:	xft:JetBrainsMono:size=10
-URxvt.scrollBar:	false
-URxvt.cursorColor:	#ffffff
