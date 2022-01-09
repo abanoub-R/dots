@@ -1,0 +1,2 @@
+/usr/bin/pactl set-sink-volume 0 +5%
+pkill -RTMIN+10 dwmblocks
