@@ -66,7 +66,6 @@ static const char *downvol[]  = { "down-vol",   NULL };
 static const char *mutevol[]  = { "mute-vol",  NULL };
 
 /* launcher commands */
-static const char *fmcmd[]    = { "pcmanfm", NULL };
 static const char *ffcmd[]    = { "firefox", NULL };
 static const char *steamcmd[] = { "steam", NULL };
 static const char *disccmd[]  = { "discord", NULL };
@@ -78,7 +77,6 @@ static Key keys[] = {
 	
 	/* 				custom commands				     */
 	{ MODKEY|ShiftMask,		XK_s,      spawn,	   {.v = maimcmd } },
-        { MODKEY|ControlMask,		XK_0,      spawn,          {.v = fmcmd } },
 	{ MODKEY|ControlMask,           XK_1,      spawn,          {.v = ffcmd } },
 	{ MODKEY|ControlMask,		XK_2,	   spawn,	   {.v = steamcmd} },
 	{ MODKEY|ControlMask,           XK_3,      spawn,	   {.v = disccmd} },
