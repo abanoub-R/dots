@@ -1,6 +1,6 @@
-URxvt.font:			  xft:JetBrains Mono:size=10
-URxvt.background:                 #000000
-URxvt.foreground:		  #ffffff
+URxvt.font:			  xft:terminus:size=11
+URxvt.background:                 #141414
+URxvt.foreground:		  #bebebe
 URxvt*scrollBar:                  false
 URxvt*cursorBlink:                true
 URxvt*saveLines:                  5000
@@ -8,3 +8,35 @@ URxvt*saveLines:                  5000
 URxvt.iso14755:                   false
 URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
+
+!! black dark/light
+*color0:                          #122343
+*color8:                          #12367a
+
+!! red dark/light
+*color1:                          #21365f
+*color9:                          #254482
+
+!! green dark/light
+*color2:                          #2b3850
+*color10:                         #2c497f
+
+!! yellow dark/light
+*color3:                          #414f6a
+*color11:                         #4c6dac
+
+!! blue dark/light
+*color4:                          #535c70
+*color12:                         #5e7ab9
+
+!! magenta dark/light
+*color5:                          #666c7a
+*color13:                         #7890c9
+
+!! cyan dark/light
+*color6:                          #7e8187
+*color14:                         #8fb2ee
+
+!! white dark/light
+*color7:                          #d8d8d8
+*color15:                         #f8f8f8
