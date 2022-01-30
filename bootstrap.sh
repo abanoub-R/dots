@@ -12,7 +12,7 @@ sudo make clean install
 cd dwmblocks
 sudo make clean install
 
-cd ..
+cd ..;cd ..
 cd system
 
 echo "Moving configs..."
