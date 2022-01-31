@@ -20,6 +20,7 @@ mv .Xresources ~
 mv .bashrc ~
 mv .profile ~
 mv .vimrc ~
+mv dunstrc ~/.config/dunst/
 
 echo "Setting up scripts..."
 cd scripts
