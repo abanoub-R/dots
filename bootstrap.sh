@@ -3,7 +3,7 @@ echo "THIS SCRIPT IS INTENDED TO BE USED ON FRESH INSTALLS OF ARCH / ARCH BASED 
 echo "THIS SCRIPT WILL ONLY WORK IF RAN AS SUDO"
 
 echo "Installing apps..."
-pacman -S firefox steam discord dunst vim maim rxvt-unicode git alsa-utils lxappearance pamixer terminus-font
+pacman -S firefox steam discord dunst vim maim rxvt-unicode git alsa-utils lxappearance pamixer terminus-font nitrogen
 
 echo "Setting up dwm..."
 cd dwm
