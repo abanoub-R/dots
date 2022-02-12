@@ -1,32 +1,19 @@
 clear
 
-echo "THIS SCRIPT IS INTENDED TO BE USED ON FRESH INSTALLS OF ARCH / ARCH BASED DISTROS, DO NOT RUN OTHERWISE."
-echo "THIS SCRIPT WILL ONLY WORK IF RAN AS SUDO"
+# disclaimer
+echo "> THIS SCRIPT IS INTENDED TO BE USED ON FRESH INSTALLS OF ARCH / ARCH BASED DISTROS, DO NOT RUN OTHERWISE."
+echo "> THIS SCRIPT WILL ONLY WORK IF RAN AS SUDO"
+echo "> if you are running artix, this'll install support pkgs and pacman (this may cause errors on arch.)"
+echo "waiting for 5 seconds.."
 
-distro=0
-echo "Are you running Artix? [y\n] : "
-read $distro
+sleep 5
 
-# if running artix:
-if [ $distro = "y" ]
-then
-  cd system
-  pacman -S systemd
-  sudo mv pacman.conf /etc/
-  pacman -Syu
-elif [ $distro = "n" ]
-then
-  echo "Proceeding with setup"
-elif [ $distro != "y" ] || [ $distro != "n" ]  # unknown option
-then
-  echo "Unidentified option."
-  quit
-fi
-
-clear 
+echo "Initializing..."
+home=/home/$(whoami) 
 
 echo "Installing apps..."
-pacman -S firefox steam discord dunst vim maim rxvt-unicode git alsa-utils lxappearance pamixer terminus-font nitrogen
+
+pacman -S xorg-server xorg-xrandr xorg-xinit pulseaudio firefox steam discord dunst vim maim rxvt-unicode git alsa-utils lxappearance pamixer terminus-font nitrogen
 
 echo "Setting up dwm..."
 cd dwm
@@ -39,11 +26,11 @@ cd ..;cd ..
 cd system
 
 echo "Moving configs..."
-mv .Xresources ~
-mv .bashrc ~
-mv .profile ~
-mv .vimrc ~
-mv dunstrc ~/.config/dunst/
+mv .Xresources $(home)
+mv .bashrc $(home)
+mv .profile $(home)
+mv .vimrc $(home)
+mv dunstrc $(home)/.config/dunst/
 
 echo "Setting up scripts..."
 cd scripts
