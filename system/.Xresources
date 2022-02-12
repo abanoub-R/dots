@@ -1,5 +1,5 @@
 URxvt.font:			  xft:terminus:size=11
-URxvt.background:                 #141414
+URxvt.background:                 #0a0a0a
 URxvt.foreground:		  #bebebe
 URxvt*scrollBar:                  false
 URxvt*cursorBlink:                true
@@ -9,33 +9,29 @@ URxvt.iso14755:                   false
 URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
 
-!! black dark/light
-*color0:                          #122343
-*color8:                          #12367a
-
 !! red dark/light
-*color1:                          #21365f
-*color9:                          #254482
+*color1:                          #cc3232
+*color9:                          #ff3f3f
 
 !! green dark/light
-*color2:                          #2b3850
-*color10:                         #2c497f
+*color2:                          #52cd52
+*color10:                         #40ff40
 
 !! yellow dark/light
-*color3:                          #414f6a
-*color11:                         #4c6dac
+*color3:                          #cdcd3e
+*color11:                         #ffff40
 
 !! blue dark/light
-*color4:                          #535c70
-*color12:                         #5e7ab9
+*color4:                          #3e3ecd
+*color12:                         #4040ff
 
 !! magenta dark/light
-*color5:                          #666c7a
-*color13:                         #7890c9
+*color5:                          #8b00f8
+*color13:                         #8e3ecd
 
 !! cyan dark/light
-*color6:                          #7e8187
-*color14:                         #8fb2ee
+*color6:                          #21cdcd
+*color14:                         #52cdcd
 
 !! white dark/light
 *color7:                          #d8d8d8
