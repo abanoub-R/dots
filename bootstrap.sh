@@ -13,7 +13,7 @@ home=/home/$(whoami)
 
 echo "Installing apps..."
 
-pacman -S xorg-server xorg-xrandr xorg-xinit pulseaudio firefox steam discord dunst vim maim rxvt-unicode git alsa-utils lxappearance pamixer terminus-font nitrogen
+pacman -S xclip xorg-server xorg-xrandr xorg-xinit pulseaudio firefox steam discord dunst vim maim rxvt-unicode git alsa-utils lxappearance pamixer terminus-font nitrogen
 
 echo "Setting up dwm..."
 cd dwm
