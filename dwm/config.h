@@ -15,10 +15,11 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_blue1[] 	    = "#1071b2";
 static const char col_blue2[]	    = "#224488";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray1, col_gray2  },
-	[SchemeSel]  = { col_white, col_blue2, col_blue2  },
+	[SchemeNorm] = { col_white, col_gray1, col_gray1 },
+	[SchemeSel]  = { col_white, col_blue2, col_blue2},
 };
 
 /* tagging */
@@ -61,7 +62,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-sb", col_blue2};
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *maimcmd[]  = { "maim-cp",NULL};
+static const char *maimcp[]   = { "maim-cp",NULL};
+static const char *maimsv[]   = { "maim-sv", NULL };
 static const char *upvol[]    = { "up-vol",     NULL };
 static const char *downvol[]  = { "down-vol",   NULL };
 static const char *mutevol[]  = { "mute-vol",  NULL };
@@ -77,10 +79,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	
 	/* 				custom commands				     */
-	{ MODKEY|ShiftMask,		XK_s,      spawn,	   {.v = maimcmd } },
-	{ MODKEY|ControlMask,           XK_1,      spawn,          {.v = ffcmd } },
+	{ MODKEY|ControlMask,		XK_Print,      spawn,	   {.v = maimsv  } },
+	{ MODKEY|ShiftMask,		XK_Print,      spawn,	   {.v = maimcp  } },
+	{ MODKEY|ControlMask,           XK_1,      spawn,          {.v = ffcmd   } },
 	{ MODKEY|ControlMask,		XK_2,	   spawn,	   {.v = steamcmd} },
-	{ MODKEY|ControlMask,           XK_3,      spawn,	   {.v = disccmd} },
+	{ MODKEY|ControlMask,           XK_3,      spawn,	   {.v = disccmd } },
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       XF86XK_AudioMute, spawn, 	   {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },

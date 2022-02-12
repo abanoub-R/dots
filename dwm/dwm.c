@@ -1377,10 +1377,7 @@ restack(Monitor *m)
 
 void
 run(void)
-{       
-			/*	autostart 	*/
-	system("dwmblocks &");
-			/*	autostart 	*/
+{
 	XEvent ev;
 	/* main event loop */
 	XSync(dpy, False);
