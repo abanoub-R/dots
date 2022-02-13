@@ -5,4 +5,7 @@ I decided to make this a repo for all my dot-files in general, since as i said i
 - updated and patched bootstrap
 - added missing maim scripts used in the dwm build but not actually present in the repo
 - changed urxvt colorscheme, features less saturated versions of the default 16 colors for a better look on the terminal
-![alt text] (https://github.com/abanoub-R/.files/blob/main/preview.png)
+
+
+![alt text] (https://github.com/abanoub-R/.files/blob/main/preview.png?raw=true
+)
