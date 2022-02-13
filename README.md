@@ -7,4 +7,4 @@ I decided to make this a repo for all my dot-files in general, since as i said i
 - changed urxvt colorscheme, features less saturated versions of the default 16 colors for a better look on the terminal
 
 
-![alt text] (https://github.com/abanoub-R/.files/blob/main/preview.png?raw=true)
+![Preview] (https://github.com/abanoub-R/.files/blob/main/preview.png?raw=true)
