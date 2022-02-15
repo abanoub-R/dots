@@ -10,6 +10,8 @@ sleep 5
 
 echo "Initializing..."
 home=/home/$(whoami) 
+echo 'export PS1="\[\033[38;5;27m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;27m\][\[$(tput sgr0)\]\[\033[38;5;33m\]\u\[$(tput s    gr0)\]\[\033[38;5;27m\]]\[$(tput sgr0)\] : \[$(tput sgr0)\]\[\033[38;5;241m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;27m    \]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"'
+
 
 echo "Installing apps..."
 
