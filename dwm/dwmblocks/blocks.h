@@ -5,7 +5,7 @@ static const Block blocks[] = {
 
 	{"RAM : ", 	"free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",		1,			0},
         
-	{"♪ : ",	"pamixer --get-volume",	0,			10},
+	{"♪ : ",	"awk -F'[][]' '/Left:/ { print $2 }' <(amixer sget Master)",	0,			10},
 
 	{"", "date '+%m/%d/%Y %I:%M %p'",	1,			0},
 };
