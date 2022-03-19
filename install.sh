@@ -11,7 +11,7 @@ case $choice in # handler
     read homedir
     echo "would you like to install dwm (y/n) ?"
     read install_dwm
-    echo "would you like to install home dotfiles (y/n)"
+    echo "would you like to install home dotfiles (y/n) ?"
     read install_home
     
     echo "  >>  Installing"
