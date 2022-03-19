@@ -28,7 +28,7 @@ int main()
       printf("setting up home .files\n");
       system("cd system && mv .* %s",userdir);
       
-      printf("would you like to setup dwm scripts? (y/n) ");
+      printf("would you like to install dwm? (y/n) ");
       scanf("%c",&choice);
       
       switch (choice)
@@ -36,18 +36,6 @@ int main()
         case y:
           printf("installing dwm scripts\n");
           system("cd scripts && chmod +x && sudo mv * /usr/local/bin");
-          break;
-        case n:
-          break;
-        default:
-          abort();
-      }
-      printf("would you like to install dwm? (y/n) ");
-      scanf("%c",&choice);
-      
-      switch (choice)
-      {
-        case y:
           printf("compiling dwm and dwmblocks");
           system("sudo make clean install");
           break;
