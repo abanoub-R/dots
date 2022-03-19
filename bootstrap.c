@@ -12,7 +12,7 @@ int main()
 {
   system("clear");
   
-  char maindir[] = system("$(pwd)"; // stores main
+  char maindir[] = system("echo $(pwd)"); // stores main
   char userdir[] = ""; // stores user dir to modify when ran as root
   static char choice;
   
