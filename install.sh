@@ -1,3 +1,4 @@
+clear
 echo "This script must be ran as root to take effect. Are you sure you want to continue? (y/n)"
 read choice
 
@@ -10,7 +11,7 @@ case $choice in # handler
     read homedir
     echo "would you like to install dwm (y/n) ?"
     read install_dwm
-    echo "would you like to install home dotfiles"
+    echo "would you like to install home dotfiles (y/n)"
     read install_home
     
     echo "  >>  Installing"
