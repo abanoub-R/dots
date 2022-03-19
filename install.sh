@@ -1,5 +1,7 @@
 clear
-echo "This script must be ran as root to take effect. Are you sure you want to continue? (y/n)"
+echo "this script must be ran as root to take effect. Are you sure you want to continue? (y/n)"
+echo "this script will only make changes that are universal to linux, so pacman.conf for example, wont be installed."
+
 read choice
 
 case $choice in # handler
