@@ -8,3 +8,4 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_blue1[] 	    = "#1071b2";
 static const char col_blue2[]	      = "#224488";
 static const char col_green[]       = "#295340";
+static const char col_purpl[]       = "#3F365C";
