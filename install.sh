@@ -34,7 +34,7 @@ echo "-- installing dependencies"
 case $pkg in
   "xbps") echo "-- continuing with xbps options"
           echo "-- note: this will take a while especially on fresh installs as not only are these packages and their dependencies being installed, but it will also have to sync everything else"
-          $method xbps-install -Su alsa-firmware alsa-utils base-system dejavu-fonts-ttf dmenu elogind ffmpeg firefox-esr gcc libX11-devel libXft-devel libavcodec libdrm-32bit-2.4.110_1 libgcc-32bit libglapi-32bit libglvnd-32bit libstdc++-32bit libva-glx-32bit linux-firmwarelxappearance maim make mesa-dri mesa-dri-32bit mesa-vaapi neofetch nitrogen pulseaudio rxvt-unicode steam terminus-font ttf-ubuntu-font-family vim void-repo-multilib void-repo-multilib void-repo-nonfree-9_6 xclip xorg-minimal xrandr xrdb xz
+          $method xbps-install -Su alsa-firmware alsa-utils base-system dejavu-fonts-ttf dmenu elogind ffmpeg firefox-esr gcc libX11-devel libXft-devel libavcodec libdrm-32bit-2.4.110_1 libgcc-32bit libglapi-32bit libglvnd-32bit libstdc++-32bit libva-glx-32bit linux-firmwarelxappearance maim make mesa-dri mesa-dri-32bit mesa-vaapi neofetch nitrogen pulseaudio rxvt-unicode steam terminus-font ttf-ubuntu-font-family vim void-repo-multilib void-repo-multilib void-repo-nonfree-9_6 xclip xorg-minimal xrandr xrdb xz mesa-vulkan-radeon amdvlk vkd3d vkd3d-32bit
   ;;
   
   "pacman") echo "-- continuing with pacman options"
