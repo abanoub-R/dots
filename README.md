@@ -6,13 +6,18 @@ my *nix dots
 
 # packages
 
-libxft/dev 
-libx11/dev
-rxvt-unicode
-maim
-xclip
-xrandr
-git
-vim
-firefox-esr
-steam
+* libxft/dev 
+
+* libx11/dev
+
+* rxvt-unicode
+
+* maim
+
+* xclip
+
+* xrandr
+
+* git
+
+* vim
