@@ -1,10 +1,10 @@
-# Dotfiles
-My *nix dots
+# dotfiles
+my *nix dots
 
-# What's new?
+# what's new?
 - added back bootstrap, still a work in progress
 
-# Packages
+# packages
 
 libxft/dev 
 libx11/dev
