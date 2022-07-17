@@ -1,1 +1,0 @@
-maim -sf png ~/Pictures/$(date +%m%e%Y%S).png

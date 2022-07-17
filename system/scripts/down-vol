@@ -1,3 +1,0 @@
-# pulse method: /usr/bin/pactl set-sink-volume 0 -5%
-# alsa method: amixer sset Master 5%-
-pkill -RTMIN+10 dwmblocks
