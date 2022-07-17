@@ -1,7 +1,5 @@
-![Preview](https://raw.githubusercontent.com/abanoub-R/.files/main/preview.png)
-
 # Dotfiles
-A repo that holds my linux dotfiles, if you like the way it looks, feel free to use it!
+My *nix dots
 
 # What's new?
 - added back bootstrap, still a work in progress
