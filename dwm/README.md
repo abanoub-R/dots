@@ -26,9 +26,13 @@ note - xinerama is disabled by default, if you want it, enable it in config.mk a
 * vim
 
 ### install
-to install dwm and/or dwmblocks, run:
+to build dwm and/or dwmblocks, run:
 
 ```
 $ cd {dwm or dwmblocks}
 # make clean install
 ```
+
+because of conflicts with patch, the config isn't applied by default, to apply it, copy the settings you want from config.txt
+
+Thank you for reading, have a nice day.
