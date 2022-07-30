@@ -33,6 +33,8 @@ $ cd {dwm or dwmblocks}
 # make clean install
 ```
 
-because of conflicts with patch, the config isn't applied by default, to apply it, copy the settings you want from config.txt
+because of conflicts with patch, the config isn't applied by default, to apply it, copy the settings you want from config.txt, and recompile.
+
+(i know this is very inefficient, and i'll be trying to find a work around for it later)
 
 Thank you for reading, have a nice day.
