@@ -33,8 +33,4 @@ $ cd {dwm or dwmblocks}
 # make clean install
 ```
 
-because of conflicts with patch, the config isn't applied by default, to apply it, copy the settings you want from config.txt, and recompile.
-
-(i know this is very inefficient, and i'll be trying to find a work around for it later)
-
-Thank you for reading, have a nice day.
+i posted earlier about the inefficiencies of having the users manually apply the patches, so i decided "fuck it" and uploaded the already patched files. apologies to those who like the stock DWM look.
