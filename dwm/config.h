@@ -1,4 +1,14 @@
-#include "colors.h"
+/* colors */
+static const char col_white[]       = "#ffffff";
+static const char col_black[]       = "#101010";
+static const char col_gray1[]       = "#0f0f0f";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_blue1[]       = "#1071b2";
+static const char col_blue2[]       = "#224488";
+static const char col_green[]       = "#295340";
+static const char col_purpl[]       = "#54487A";
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -59,14 +69,15 @@ static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmen
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *maimcp[]   = { "maim-cp",NULL};
 static const char *maimsv[]   = { "maim-sv", NULL };
-static const char *upvol[]    = { "up-vol",     NULL };
-static const char *downvol[]  = { "down-vol",   NULL };
-static const char *mutevol[]  = { "mute-vol",  NULL };
+static const char *up[]       = { "up-vol",     NULL };
+static const char *down[]     = { "down-vol",   NULL };
+static const char *mute[]     = { "mute-vol",  NULL };
+static const char *slock[]    = { "slock", NULL};
 
 /* launcher commands */
-static const char *ffcmd[]    = { "firefox", NULL };
-static const char *steamcmd[] = { "steam", "-no-browser" };
-static const char *disccmd[]  = { "discord", NULL };
+static const char *firefox[]    = { "firefox", NULL };
+static const char *steam[] 	= { "steam", "-no-browser" };
+static const char *discord[]  	= { "discord", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -74,14 +85,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	
  	/*                              custom commands                              */  
-        { MODKEY|ControlMask,           XK_Print,      spawn,      {.v = maimsv  } },
-        { MODKEY|ShiftMask,             XK_Print,      spawn,      {.v = maimcp  } },
-        { MODKEY|ControlMask,           XK_1,      spawn,          {.v = ffcmd   } },
-        { MODKEY|ControlMask,           XK_2,      spawn,          {.v = steamcmd} },
-        { MODKEY|ControlMask,           XK_3,      spawn,          {.v = disccmd } },
-        { 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-        { 0,                       XF86XK_AudioMute, spawn,        {.v = mutevol } },
-        { 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+        { MODKEY|ControlMask,           XK_Print,  spawn,      		{.v = maimsv  } },
+        { MODKEY|ShiftMask,             XK_Print,  spawn,      		{.v = maimcp  } },
+        { MODKEY|ControlMask,           XK_1,      spawn,          	{.v = firefox } },
+        { MODKEY|ControlMask,           XK_2,      spawn,          	{.v = steam   } },
+        { MODKEY|ControlMask,           XK_3,      spawn,          	{.v = discord } },
+	{ MODKEY|ShiftMask,		XK_l,	   spawn,	        {.v = slock   } },
+        { 0,                       	XF86XK_AudioLowerVolume, spawn, {.v = down    } },
+        { 0,                       	XF86XK_AudioMute, spawn,        {.v = mute    } },
+        { 0,                       	XF86XK_AudioRaiseVolume, spawn, {.v = up      } },
         /*                              custom commands                              */
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
