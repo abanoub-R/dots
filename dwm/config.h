@@ -1,6 +1,6 @@
 /* colors */
 static const char col_white[]       = "#ffffff";
-static const char col_black[]       = "#101010";
+static const char col_black[]       = "#000000";
 static const char col_gray1[]       = "#0f0f0f";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -9,9 +9,10 @@ static const char col_blue1[]       = "#1071b2";
 static const char col_blue2[]       = "#224488";
 static const char col_green[]       = "#295340";
 static const char col_purpl[]       = "#54487A";
+static const char col_purp2[]	    = "#7c6eaa";
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -19,12 +20,12 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 5;       /* horizontal padding of bar */
 static const char *fonts[]          = { "terminus:size=12" };
-static const char dmenufont[]       = "terminus:size=12";
+static const char dmenufont[]       = "terminus:size=16";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_purpl,  col_purpl  },
+	[SchemeNorm] = { col_purpl, col_black, col_gray2 },
+	[SchemeSel]  = { col_purp2, col_gray1, col_purp2 },
 };
 
 /* tagging */
@@ -65,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-sb", col_purpl};
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-sb", col_gray1, "-nf", col_purpl, "-sf", col_purp2};
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *maimcp[]   = { "maim-cp",NULL};
 static const char *maimsv[]   = { "maim-sv", NULL };
