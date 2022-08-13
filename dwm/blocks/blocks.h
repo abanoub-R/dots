@@ -5,7 +5,7 @@ static const Block blocks[] = {
 
 	{"RAM : ", 	"get-ram",		1,			0},
         
-	{"♪ : ",	"get-vol",		0,			10},
+	{"VOL : ",	"get-vol",		0,			10},
 
 	{"", 		"get-date",		1,			0},
 };
