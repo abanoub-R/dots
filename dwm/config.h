@@ -77,7 +77,7 @@ static const char *slock[]    = { "slock", NULL};
 
 /* launcher commands */
 static const char *firefox[]    = { "firefox", NULL };
-static const char *steam[] 	= { "steam", "-no-browser" };
+static const char *steam[] 	= { "steam", NULL };
 static const char *discord[]  	= { "discord", NULL };
 
 static Key keys[] = {
