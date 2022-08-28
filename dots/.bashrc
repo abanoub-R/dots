@@ -16,4 +16,4 @@ fi
 
 
 # Put your fun stuff here.
-export PS1="\[$(tput bold)\]\[\033[38;5;61m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;61m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
