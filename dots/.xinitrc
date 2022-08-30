@@ -8,5 +8,9 @@ xrdb ~/.Xresources
 dunst &
 
 # start dwm
-dwmblocks &
-dwm
+while xsetroot -name " CPU : `get-cpu` | RAM : `get-ram` | `get-date`"
+          do
+            sleep 1
+          done &
+
+dbus-launch --exit-with-session dwm
