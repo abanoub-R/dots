@@ -6,6 +6,9 @@ if [[ -f ~/.bashrc ]] ; then
 	. ~/.bashrc
 fi
 
+# optionally run dwm
+# startx
+
 # set temp dir
 mkdir -p /tmp/${UID}-runtime-dir
 export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
