@@ -67,7 +67,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-sb", col_gray1, "-nf", col_purpl, "-sf", col_purp2};
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "st", NULL };
+
 static const char *maimcp[]   = { "maim-cp",NULL};
 static const char *maimsv[]   = { "maim-sv", NULL };
 static const char *up[]       = { "up-vol",     NULL };
