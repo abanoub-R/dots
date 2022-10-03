@@ -1,0 +1,2 @@
+amixer sset "$SND" 5%-
+notify-send -r 600 -i /usr/share/icons/Adwaita/16x16/legacy/audio-volume-high.png "$(get-vol)"
