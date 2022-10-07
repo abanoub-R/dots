@@ -1,0 +1,21 @@
+#! /bin/sh
+
+# enable compositing
+picom --daemon --backend glx --vsync
+
+# fix cursor
+xsetroot -cursor_name left_ptr
+
+# start sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# create workspaces
+bspc monitor -d I II III IV V
+
+# appearance
+bspc config border_width         0
+bspc config window_gap           12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
