@@ -1,6 +1,6 @@
 URxvt.font:			  xft:Terminus:size=12
 URxvt.background:                 #000000
-URxvt.foreground:		  #bebebe
+URxvt.foreground:		  #ffffff
 URxvt*scrollBar:                  false
 URxvt*cursorBlink:                true
 URxvt*saveLines:                  5000
@@ -9,30 +9,40 @@ URxvt.iso14755:                   false
 URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
 
-!! red dark/light
-*color1:                          #cc3232
-*color9:                          #ff3f3f
 
-!! green dark/light
-*color2:                          #52cd52
-*color10:                         #40ff40
+! special
+*foreground:   #ffffff
+*background:   #1d1f21
+*cursorColor:  #c5c8c6
 
-!! yellow dark/light
-*color3:                          #cdcd3e
-*color11:                         #ffff40
+! black
+*color0:       #282a2e
+*color8:       #373b41
 
-!! blue dark/light
-*color4:                          #3e3ecd
-*color12:                         #4040ff
+! red
+*color1:       #cc0000
+*color9:       #ef2929
 
-!! magenta dark/light
-*color5:                          #8b00f8
-*color13:                         #8e3ecd
+! green
+*color2:       #4e9a06
+*color10:      #8ae234
 
-!! cyan dark/light
-*color6:                          #21cdcd
-*color14:                         #52cdcd
+! yellow
+*color3:       #c4a000
+*color11:      #fce94f
 
-!! white dark/light
-*color7:                          #d8d8d8
-*color15:                         #f8f8f8
+! blue
+*color4:       #3465a4
+*color12:      #729fcf
+
+! magenta
+*color5:       #75507b
+*color13:      #ad7fa8
+
+! cyan
+*color6:       #06989a
+*color14:      #34e2e2
+
+! white
+*color7:       #d3d7cf
+*color15:      #eeeeec
