@@ -1,4 +1,4 @@
-URxvt.font:			  xft:Terminus:size=12
+URxvt.font:			  xft:monospace:size=11
 URxvt.background:                 #000000
 URxvt.foreground:		  #ffffff
 URxvt.internalBorder:  		  7
@@ -10,7 +10,6 @@ URxvt*saveLines:                  5000
 URxvt.iso14755:                   false
 URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
-
 
 ! special
 *foreground:   #ffffff
