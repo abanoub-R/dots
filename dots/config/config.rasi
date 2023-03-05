@@ -1,4 +1,0 @@
-configuration {
- font: "Monospace 11";
- }
-@theme "/home/abanoub/.local/share/rofi/themes/DarkAdwaita.rasi"
