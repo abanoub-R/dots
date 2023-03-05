@@ -10,8 +10,8 @@ fi
 # startx
 
 # set temp dir
-mkdir -p /tmp/${UID}-runtime-dir
-export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+# mkdir -p /tmp/${UID}-runtime-dir
+# xport XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
 
 # auto-start hikari
-dbus-run-session hikari
+# dbus-run-session hikari
