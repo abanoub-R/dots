@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	st
+	urxvt
 
 # program launcher
 super + p
@@ -131,3 +131,11 @@ super + shift + Print
 # take a screenshot and save it to ~/pictures
 super + ctrl + Print
 	maim-sv
+
+# increase volume
+XF86AudioRaiseVolume
+	up-vol
+
+# decrease volume
+XF86AudioLowerVolume
+	down-vol
