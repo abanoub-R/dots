@@ -1,0 +1,13 @@
+/* rename this file to gnome-shell.css after placing it in ~/.themes/AdwaitaSlimPanel/gnome-shell/ */
+
+/* make panel smaller */
+#panel { height: 24px; }
+
+/* make font smaller */
+#panel { font-size: 14px; }
+
+/* clock fix by Aylur's widgets */
+.panel-button.clock-display {
+	-natural-hpadding: 0;
+	-minimum-hpadding: 0;
+}
