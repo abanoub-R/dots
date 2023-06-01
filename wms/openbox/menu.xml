@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+    <menu id="root-menu" label="OpenBox 3">
+        <menu id="1" label="Development">
+            <item label="CMake curses GUI (ccmake)"> <action name="Execute">
+                <execute>xterm -e ccmake</execute>
+            </action> </item>
+            <item label="IDLE (Python IDE)"> <action name="Execute">
+                <execute>idle</execute>
+            </action> </item>
+            <item label="Python"> <action name="Execute">
+                <execute>xterm -e python</execute>
+            </action> </item>
+            <item label="Tclsh8.6"> <action name="Execute">
+                <execute>xterm -e tclsh8.6</execute>
+            </action> </item>
+        </menu>
+        <menu id="2" label="Editors">
+            <item label="Nano"> <action name="Execute">
+                <execute>xterm -e nano</execute>
+            </action> </item>
+        </menu>
+        <menu id="6" label="Graphics">
+            <item label="GLXGears"> <action name="Execute">
+                <execute>glxgears</execute>
+            </action> </item>
+        </menu>
+        <menu id="7" label="Games">
+	    <item label="ChromiumBSU"> <action name="Execute">
+		<execute>chromium-bsu</execute>
+	    </action> </item>
+	    <item label="Minecraft"> <action name="Execute">
+		<execute>minecraft-launcher</execute>
+	    </action> </item>
+	    <item label="Steam"> <action name="Execute">
+		<execute>steam</execute>
+	    </action> </item>
+	</menu>
+	<menu id="5" label="Network">
+            <item label="Chromium"> <action name="Execute">
+                <execute>chromium-browser</execute>
+            </action> </item>
+            <item label="Discord"> <action name="Execute">
+	        <execute>discord</execute>
+	    </action> </item>
+            <item label="W3m"> <action name="Execute">
+                <execute>xterm -e w3m</execute>
+            </action> </item>
+        </menu>
+        <menu id="4" label="Science">
+            <item label="BC"> <action name="Execute">
+                <execute>xterm -e bc</execute>
+            </action> </item>
+            <item label="DC"> <action name="Execute">
+                <execute>xterm -e dc</execute>
+            </action> </item>
+        </menu>
+        <menu id="19" label="Shells">
+            <item label="UXTerm"> <action name="Execute">
+                <execute>uxterm</execute>
+            </action> </item>
+            <item label="Xterm"> <action name="Execute">
+                <execute>xterm</execute>
+            </action> </item>
+        </menu>
+        <menu id="37" label="System">
+            <menu id="36" label="Settings">
+                <item label="Customize Look and Feel"> <action name="Execute">
+                    <execute>lxappearance</execute>
+                </action> </item>
+                <item label="Openbox Configuration Manager"> <action name="Execute">
+                    <execute>obconf</execute>
+                </action> </item>
+            </menu>
+            <item label="Pstree"> <action name="Execute">
+                <execute>xterm -e pstree.x11</execute>
+            </action> </item>
+	    <item label="Top"> <action name="Execute">
+                <execute>xterm -e top</execute>
+            </action> </item>
+        </menu>
+        <menu id="38" label="Utilities">
+	    <menu id="40" label="Screenshots">
+	        <item label="Save to Pictures"> <action name="Execute">
+		    <execute>maim-sv</execute>
+		</action> </item>
+		<item label="Copy to Clipboard"> <action name="Execute">
+		    <execute>maim-cp</execute>
+		</action> </item>
+	    </menu>
+	    <item label="KeePassXC"> <action name="Execute">
+	        <execute>keepassxc</execute>
+	    </action> </item>
+            <item label="Info"> <action name="Execute">
+                <execute>xterm -e info</execute>
+            </action> </item>
+        </menu>
+        <separator/>
+        <menu id="41" label="OpenBox">
+            <menu id="client-list-menu"/>
+            <item label="Reconfigure"> <action name="Reconfigure"/> </item>
+            <separator/>
+            <item label="Exit"> <action name="Exit"/> </item>
+        </menu>
+    </menu>
+</openbox_menu>
