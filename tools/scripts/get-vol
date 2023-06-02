@@ -1,5 +1,6 @@
 #!/bin/bash
 
 # alsa method : awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget "$SND")
-pactl list sinks | grep '^[[:space:]]Volume:' | \
-    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+
+# pulseaudio method
+pactl get-sink-volume 1 | grep -o '[0-9]\+%' | head -1
