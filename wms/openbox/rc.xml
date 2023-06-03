@@ -181,7 +181,7 @@
 
    <keybind key="S-C-Print"><action name="Execute"><command>maim-cp</command></action></keybind>
    <keybind key="C-Print"><action name="Execute"><command>maim-sv</command></action></keybind>
-   <keybind key="A-t"><action name="Execute"><command>xterm</command></action></keybind>
+   <keybind key="W-t"><action name="Execute"><command>xterm</command></action></keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
