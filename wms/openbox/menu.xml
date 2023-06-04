@@ -64,14 +64,6 @@
             </action> </item>
         </menu>
         <menu id="37" label="System">
-            <menu id="36" label="Settings">
-                <item label="Customize Look and Feel"> <action name="Execute">
-                    <execute>lxappearance</execute>
-                </action> </item>
-                <item label="Openbox Configuration Manager"> <action name="Execute">
-                    <execute>obconf</execute>
-                </action> </item>
-            </menu>
             <item label="Pstree"> <action name="Execute">
                 <execute>xterm -e pstree.x11</execute>
             </action> </item>
@@ -97,6 +89,14 @@
         </menu>
         <separator/>
         <menu id="41" label="OpenBox">
+	    <menu id="36" label="Settings">
+                  <item label="Customize Look and Feel"> <action name="Execute">
+                      <execute>lxappearance</execute>
+                  </action> </item>
+                  <item label="Openbox Configuration Manager"> <action name="Execute">
+                      <execute>obconf</execute>
+                  </action> </item>
+            </menu>
             <menu id="client-list-menu"/>
             <item label="Reconfigure"> <action name="Reconfigure"/> </item>
             <separator/>
