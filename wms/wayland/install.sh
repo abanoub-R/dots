@@ -1,10 +1,12 @@
 #!/bin/bash
 # Partial configuration installer, wayland only (subject to change)
 
+# TODO: Ask user for distro, install based on that
+
 # Resolution
 # Not gonna lie, way too bad at shell script to add this, if I get better at it
 # I'll rewrite this whole script anyway.
-echo "add this to your linux command line: video=HDMI-A-1:1920x1080@75 (read source)"
+echo "Add this to your linux command line: video=HDMI-A-1:1920x1080@75 (read source)"
 
 # Set GTK theme to Adwaita-dark
 echo "Setting GTK theme via GSettings"
