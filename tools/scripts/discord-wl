@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# run discord natively on wayland
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
