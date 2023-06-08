@@ -6,12 +6,15 @@ if [[ -f ~/.bashrc ]] ; then
 	. ~/.bashrc
 fi
 
-# optionally run dwm
+# run x
 # startx
 
-# set temp dir
+# set temp dir, uncomment if running wayland.
 # mkdir -p /tmp/${UID}-runtime-dir
-# xport XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+# export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
 
-# auto-start hikari
-# dbus-run-session hikari
+# start pipewire
+# dbus-run-session pipewire &
+
+# auto-start compositor
+# dbus-run-session sway
