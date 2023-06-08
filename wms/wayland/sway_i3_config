@@ -6,19 +6,25 @@
 
 ### Variables
 #
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term alacritty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+# Screenshot
+set $ps1 Print
+set $ps2 Control+Print
+set $ps3 Alt+Print
+set $ps4 Alt+Control+Print
+set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
 
 ### Output configuration
 #
@@ -29,7 +35,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 output HDMI-A-1 {
 	# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-	bg /home/abanoub/Pictures/Wallpapers/edit.png fill
+	bg /home/abanoub/Pictures/Wallpapers/20230607_134713.png fill
 	mode 1920x1080@75Hz
 }
 
@@ -80,7 +86,7 @@ output HDMI-A-1 {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec wofi --show run
+    bindsym $mod+d exec wofi
     
     # Volume
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
@@ -92,6 +98,12 @@ output HDMI-A-1 {
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+
+    # Screenshots (w/ grim)
+    bindsym $ps1 exec grim - | wl-copy
+    bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
+    bindsym $ps3 exec grim $psf
+    bindsym $ps4 exec grim -g "$(slurp)" $psf
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload

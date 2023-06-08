@@ -9,6 +9,28 @@ abanoub-R - dots
 	systems.
 
 	[ ======================================== ]
+	
+	For wayland, you will need the following
+	packages:
+
+	wl-clipboard
+	grim
+	slurp
+	gsettings
+	wofi
+
+	Regarding GSettings, it is used to change
+	the system theme. Besides setting it via
+	~/.config/gtk-3.0, it is mandatory to set
+	it here:
+
+        # Set GTK theme to Adwaita-dark
+        $ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+
+	# Change color scheme to prefer dark mode
+	$ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+	[ ======================================== ]
 
 	No additional documentation will be provided 
 	as these configurations are not meant to be 
