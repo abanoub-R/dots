@@ -20,7 +20,8 @@ abanoub-R - dots
 	wofi
 
 	All wayland configuration can be found in
-	main/install.sh
+	main/install.sh, will be ported to all
+	configurations soon :)
 
 	[ ======================================== ]
 
