@@ -19,16 +19,8 @@ abanoub-R - dots
 	gsettings
 	wofi
 
-	Regarding GSettings, it is used to change
-	the system theme. Besides setting it via
-	~/.config/gtk-3.0, it is mandatory to set
-	it here:
-
-        # Set GTK theme to Adwaita-dark
-        $ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-
-	# Change color scheme to prefer dark mode
-	$ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+	All wayland configuration can be found in
+	main/install.sh
 
 	[ ======================================== ]
 
