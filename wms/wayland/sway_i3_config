@@ -26,6 +26,9 @@ set $ps3 Alt+Print
 set $ps4 Alt+Control+Print
 set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
 
+# autotiler : https://github.com/nwg-piotr/autotiling/blob/master/autotiling/main.py
+exec_always --no-startup-id autotiling
+
 ### Output configuration
 #
 # Example configuration:
@@ -68,7 +71,7 @@ output HDMI-A-1 {
 
 ### Key bindings
 #
-# Basics:
+# Settings:
 #
     # Gaps
     gaps inner 5
