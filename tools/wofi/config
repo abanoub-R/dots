@@ -1,2 +1,6 @@
-mode=run
+mode=drun
+allow_images=true
+image_size=16
+width=400
+height=300
 term=alacritty
