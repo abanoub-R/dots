@@ -13,7 +13,7 @@ fi
 # mkdir -p /tmp/${UID}-runtime-dir
 # export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
 
-# start pipewire
+# start pipewire (should be started from wm instead)
 # dbus-run-session pipewire &
 
 # auto-start compositor on first tty
