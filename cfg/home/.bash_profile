@@ -9,7 +9,7 @@ fi
 # run x
 # startx
 
-# set temp dir, uncomment if running wayland.
+# set temp dir, uncomment if running wayland without a session manager.
 # mkdir -p /tmp/${UID}-runtime-dir
 # export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
 
