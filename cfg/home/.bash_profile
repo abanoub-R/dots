@@ -16,5 +16,7 @@ fi
 # start pipewire
 # dbus-run-session pipewire &
 
-# auto-start compositor
-# dbus-run-session sway
+# auto-start compositor on first tty
+# if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#    dbus-run-session sway
+# fi
