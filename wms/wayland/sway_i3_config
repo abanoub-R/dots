@@ -29,6 +29,9 @@ set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
 # autotiler : https://github.com/nwg-piotr/autotiling/blob/master/autotiling/main.py
 exec_always --no-startup-id autotiling
 
+# start pipewire
+exec_always --no-startup-id dbus-run-session gentoo-pipewire-launcher
+
 ### Output configuration
 #
 # Example configuration:
