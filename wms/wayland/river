@@ -10,7 +10,7 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
+# Super+Shift+Return to start an instance of alacritty
 riverctl map normal Super+Shift Return spawn alacritty
 
 # Super+D to open wofi
@@ -138,10 +138,12 @@ do
     # Eject the optical drive (well if you still have one that is)
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
-    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    # Control pulse audio volume with pactl
+    # Sink number may vary
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pactl set-sink-volume 0 +5%'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pactl set-sink-volume 0 -5%'
+    
+    # riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
