@@ -142,8 +142,7 @@ do
     # Sink number may vary
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'pactl set-sink-volume 0 +5%'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'pactl set-sink-volume 0 -5%'
-    
-    # riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
@@ -175,8 +174,11 @@ riverctl rule-add csd -app-id "bar"
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
-# Set background
-swaybg -m fill -i /home/abanoub/pictures/wallpapers/sunset_highway.png &
+# Set ideal resolution via wlr-randr (https://git.sr.ht/~emersion/wlr-randr)
+wlr-randr --output HDMI-A-1 --custom-mode 1920x1080@75Hz
 
 # Start Audio
 dbus-run-session gentoo-pipewire-launcher &
+
+# Set background
+swaybg -m fill -i /home/abanoub/pictures/wallpapers/sunset_highway.png &
