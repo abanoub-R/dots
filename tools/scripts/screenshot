@@ -1,0 +1,181 @@
+#!/bin/bash
+
+# Script to handle screenshotting for X / Wayland environments
+# USAGE: screenshot [client] [area] [method]
+
+# DEPENDENCIES
+#   - universal
+#   	- xdg-user-dir
+# 	- xorg
+# 		- xclip
+# 		- maim
+# 	- wayland
+# 		- wl-clipboard
+# 		- grim
+# 		- slurp
+
+# Wayland takes first priority as I mainly use it over Xorg, though Xorg is still
+# included for compatability.
+
+# Used if user uses wrong argument, says what they did wrong and throws help.
+invalid_args() {
+	# To be given by the error case of the argument
+	argument=$1
+
+	# Line number to be referenced by whatever executes the function
+	line=$2
+	
+	# Go through possible arguments, if found, print its name.
+	# Current method is unoptimized, who cares.
+	case "$argument" in
+		"area")
+			echo "Invalid argument used for [$argument]"
+		;;
+
+		"method")
+			echo "Invalid argument used for [$argument]"
+		;;
+		
+		"help")
+			# Just skip message and print help from below   
+		;;
+
+		*)
+			# This will most likely never happen unless the script itself is changed,
+			# but its here just in case.
+			echo -e "Internal Error: \n"
+			echo -e "\t** invalid_args(): $argument not found\n"
+			echo -e "\t!! If you are reading this, you did nothing"
+			echo -e "\t!! wrong, and there is an error within the"
+			echo -e "\t!! script itself. To fix the error, see"
+			echo -e "\t!! line $line inside the script itself."
+		;;
+	esac
+	
+	# Print help regardless of what happens
+	echo -e "\n\nUSAGE: screenshot [client] [area] [method]"
+	echo "------------------------------------------"
+	echo "client:					"
+	echo "	wayland,xorg				"
+	echo "------------------------------------------"
+	echo "area:					"
+	echo "	fullscreen,selection			"
+	echo "------------------------------------------"
+	echo "method:					"
+	echo "	copy,save				"
+	echo "------------------------------------------"	
+	echo "screenshot help -- show this help         "
+	echo "------------------------------------------"
+	echo "NOTE:   THIS SCRIPT IS MEANT FOR INTERNAL   "
+	echo -e "\tUSE ONLY, ADDITIONAL SUPPORT WILL   "
+	echo -e "\tNOT BE GIVEN.			"
+
+	# Exit with failure code (1)
+	exit 1
+}
+
+# Saved pictures go here
+xdg_pictures="$(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png"
+
+# Read 1st argument, evaluate the later arguments until a final command is reached.
+case "$1" in
+	"help")
+		invalid_args help $LINENO
+	;;
+	
+	"wayland")
+		case "$2" in
+			"fullscreen")
+				case "$3" in
+					"copy")
+						echo "Executing wayland fullscreen copy shot using 'grim'."
+						grim - | wl-copy
+					;;
+
+					"save")
+						echo "Executing wayland fullscreen save shot using 'grim'."
+						echo "Saving to '${xdg_pictures}'"
+						grim ${xdg_pictures}
+					;;
+
+					*)
+						invalid_args "method" "$LINENO"
+					;;
+				esac
+			;;
+
+			"selection")
+				case "$3" in
+					"copy")
+						echo "Executing wayland selection copy shot using 'grim'."
+						grim -g "$(slurp)" - | wl-copy
+					;;
+
+					"save")
+						echo "Executing wayland selection save shot using 'grim'"
+						echo "Saving to '${xdg_pictures}'"
+						grim -g "$(slurp)" ${xdg_pictures}
+					;;
+
+					*)
+						invalid_args "method" "$LINENO"
+					;;
+				esac
+			;;
+			
+			*)
+				invalid_args "area" "$LINENO"
+			;;
+		esac
+	;;
+
+	"xorg")
+		case "$2" in
+			"fullscreen")
+				case "$3" in
+					"copy")
+						echo "Executing xorg fullscreen copy shot using 'maim'"
+						maim -u | xclip -selection clipboard -t image/png
+					;;
+
+					"save")
+						echo "Executing xorg fullscreen save shot using 'maim'"
+						echo "Saving to '${xdg_pictures}'"
+						maim -u ${xdg_pictures}
+					;;
+
+					*)
+						invalid_args "method" "$LINENO"
+					;;
+				esac
+			;;
+
+			"selection")
+				case "$3" in
+					"copy")
+						echo "Executing xorg selection copy shot using 'maim'"
+						maim -os | xclip -selection clipboard -t image/png
+					;;
+
+					"save")
+						echo "Executing xorg selection save shot using 'maim'"
+						echo "Saving to '${xdg_pictures}'"
+						maim -osf png ${xdg_pictures}
+					;;
+
+					*)
+						invalid args "method" "$LINENO"
+					;;
+				esac
+			;;
+
+			*)
+				invalid_args "area" "$LINENO"
+			;;
+		esac
+	;;
+
+	*)
+		echo "No valid arguments given."
+	;;
+esac
