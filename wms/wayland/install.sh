@@ -1,5 +1,5 @@
 #!/bin/bash
-# Partial configuration installer, wayland only (subject to change)
+# Wayland setup
 
 # TODO: Ask user for distro, install based on that
 
