@@ -19,3 +19,5 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # Set font to DeJavu
 echo "Setting font to DeJavu Sans 11"
 gsettings set org.gnome.desktop.interface font-name 'DeJavu Sans 11'
+
+# Discord on FlatPak: flatpak run --socket=wayland com.discordapp.Discord --enable-features=UseOzonePlatform --ozone-platform=wayland
