@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Multi-option script to control volume	via pulseaudio
+
+# get sink volume
+# get_volume() {
+# 	current_volume=$(pactl get-sink-volume 1 | grep -o '[0-9]\+%' | head -1)
+#	case $1 in
+#		"show")
+#			notify-send -r 600 -i /usr/share/icons/Adwaita/16x16/devices/audio-headset.png $current_volume
+#		;;
+#
+#		*)
+#		   # Do nothing
+#		;;
+#	esac
+
+case $1	in
+    "--increase")
+        pactl set-sink-volume $2 +5%
+    ;;
+
+	"--decrease")
+        pactl set-sink-volume $2 -5%
+    ;;
+
+    *)
+        echo "options: [--increase | --decrease] [sink #]"
+    ;;
+esac

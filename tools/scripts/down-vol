@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# alsa : amixer sset "$SND" 5%-
-
-pactl set-sink-volume 1 -5%
-notify-send -r 600 -i /usr/share/icons/Adwaita/16x16/devices/audio-headset.png "$(get-vol)"

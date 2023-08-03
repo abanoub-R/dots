@@ -7,7 +7,7 @@ echo "Disclaimer: This only installs the wayfire config and no other graphical e
 echo "Disclaimer: Do not run as root"
 
 # Check dirname and see if it is 'dots', this is a bad way to do this but who cares
-TARGET_DIRECTORY="../dots"
+TARGET_DIRECTORY="dots"
 
 # Check for root
 if [[ $EUID -eq 0 ]]; then
@@ -15,7 +15,7 @@ if [[ $EUID -eq 0 ]]; then
     exit 1
 else
     echo "User is not root. Proceeding."
-    if [[ "$TARGET_DIRECTORY" == "$PWD" ]]; then
+    if [[ "$TARGET_DIRECTORY" == "dots" ]]; then
       echo "User is in the 'dots' directory."
       echo "Checking for ~/.config..."
 

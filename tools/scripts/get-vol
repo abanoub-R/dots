@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# alsa method : awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget "$SND")
-
-# pulseaudio method
-pactl get-sink-volume 1 | grep -o '[0-9]\+%' | head -1
