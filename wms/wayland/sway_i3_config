@@ -24,7 +24,7 @@ set $ps1 Print
 set $ps2 Control+Print
 set $ps3 Alt+Print
 set $ps4 Alt+Control+Print
-set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
+set $psf $(xdg-user-dir PICTURES)/screenshots/ps_$(date +"%Y%m%d%H%M%S").png
 
 ### Output configuration
 #
@@ -34,7 +34,7 @@ set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output HDMI-A-1 {
-	bg /opt/git/wallpapers/canada_fire.png fill
+	bg ~/pictures/wallpapers/mac_10_1.png fill
 	mode 1920x1080@75Hz
 }
 
@@ -69,11 +69,26 @@ output HDMI-A-1 {
 #
 # Settings:
 #
+
+	# Portals
+	exec /usr/libexec/xdg-desktop-portal-gtk -r
+	exec /usr/libexec/xdg-desktop-portal-wlr -r
+	exec /usr/libexec/flatpak-portal -r
+	exec "sh -c 'sleep 5;exec /usr/libexec/xdg-desktop-portal -r'"
+
     # Gaps
     gaps inner 5
 
     # No title bar
     default_border none
+	default_floating_border none
+
+	# Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
 
     # Start a terminal
     bindsym $mod+Return exec $term
@@ -88,21 +103,14 @@ output HDMI-A-1 {
     bindsym $mod+d exec wofi
     
     # Volume
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+    bindsym XF86AudioRaiseVolume exec --no-startup-id vol-ctrl --increase 0 
+    bindsym XF86AudioLowerVolume exec --no-startup-id vol-ctrl --decrease 0
 
     # Screenshots (w/ grim)
-    bindsym $ps1 exec grim - | wl-copy
-    bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
-    bindsym $ps3 exec grim $psf
-    bindsym $ps4 exec grim -g "$(slurp)" $psf
+    bindsym $ps1 exec screenshot wayland fullscreen copy
+    bindsym $ps2 exec screenshot wayland selection copy
+    bindsym $ps3 exec screenshot wayland fullscreen save
+    bindsym $ps4 exec screenshot wayland selection save
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -127,12 +135,7 @@ output HDMI-A-1 {
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    bindsym $mod+Shift+$right move right    
 
 #
 # Workspaces:
@@ -169,16 +172,13 @@ output HDMI-A-1 {
     # respectively.
     bindsym $mod+b splitv
     bindsym $mod+v splitb
-
+	
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+	bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-
-    # Toggle the current focus between tiling and floating mode
+   	# Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
@@ -187,35 +187,15 @@ output HDMI-A-1 {
     # Move focus to the parent container
     bindsym $mod+a focus parent
 
-    # Floating window rules
-    for_window [window_role = "pop-up"] floating enable
-    for_window [window_role = "bubble"] floating enable
-    for_window [window_role = "dialog"] floating enable
-    for_window [window_type = "dialog"] floating enable
-    for_window [window_role = "task_dialog"] floating enable
-    for_window [window_type = "menu"] floating enable
-    for_window [app_id = "floating"] floating enable
-    for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
-    for_window [class = "(?i)pinentry"] floating enable
-    for_window [title = "Administrator privileges required"] floating enable
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
 
-    for_window [title = "About Mozilla Firefox"] floating enable
-    for_window [window_role = "About"] floating enable
-    for_window [app_id="firefox" title="Library"] floating enable, border pixel 1, sticky enable
+	# Force all windows to float
+    for_window [app_id=".*"] floating enable
+	for_window [class=".*"] floating enable
+	for_window [instance=".*"] floating enable
+	for_window [title=".*"] floating enable
 
-    for_window [title = "Firefox - Sharing Indicator"] kill
-    for_window [title = "Firefox — Sharing Indicator"] kill
-
-    for_window [class="^Steam$" title="^Friends$"] floating enable
-    for_window [class="^Steam$" title="Steam - News"] floating enable
-    for_window [class="^Steam$" title=".* - Chat"] floating enable
-    for_window [class="^Steam$" title="^Settings$"] floating enable
-    for_window [class="^Steam$" title=".* - event started"] floating enable
-    for_window [class="^Steam$" title=".* CD key"] floating enable
-    for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-    for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-    for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-    for_window [title="^Steam Keyboard$"] floating enable
 #
 # Scratchpad:
 #
@@ -275,9 +255,12 @@ bar {
 # Auto start
 
 # Autotiler : https://github.com/nwg-piotr/autotiling/blob/master/autotiling/main.py
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
 
 # Start pipewire
 exec_always --no-startup-id dbus-run-session gentoo-pipewire-launcher
+
+# Start Python venv, this should always be last.
+# exec_always --no-startup-id ~/.config/sway/venv.sh
 
 include /etc/sway/config.d/*
