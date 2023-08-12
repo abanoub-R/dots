@@ -3,7 +3,6 @@
 # I should have done this ages ago, yet here we are.
 
 echo "Disclaimer: This installation script does NOT install system packages, just moves configuration files."
-echo "Disclaimer: This only installs the wayfire config and no other graphical environment"
 echo "Disclaimer: Do not run as root"
 
 # Check dirname and see if it is 'dots', this is a bad way to do this but who cares
@@ -40,13 +39,10 @@ else
       cp cfg/config/user-dirs* ~/.config
 
       # cfg/etc
-      echo "Copying etc/environment to /etc/environment"
+      echo "Copying cfg/etc/environment to /etc/environment"
 
       # This requires root privledges, but for one time use
-      su -c "sudo cp etc/environment /etc/environment"
-
-      # cfg/gnome
-      echo "Skipping cfg/gnome."
+      su -c "sudo cp cfg/etc/environment /etc/environment"
 
       # cfg/home
       echo "Copying bash files (1/2)"
@@ -73,14 +69,8 @@ else
       echo "Copying wofi configuration files to ~/.config/wofi"
       cp tools/wofi/* ~/.config/wofi
 
-      # wms/wayland
-      echo "Copying wayfire.ini to ~/.config"
-      cp wms/wayland/wayfire.ini ~/.config
-
-      echo "Skipping install.sh in wms/wayfire/wayfire.ini"
-
       # Finish
-      echo "Setup is complete, note that some files have been skipped. Fortunanetly, all skipped files have been pointed out."
+      echo "Setup is complete, note that some files have been skipped."
     else
       echo "User is not in the 'dots' directory."
       exit 1

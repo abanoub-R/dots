@@ -24,3 +24,7 @@ abanoub-R - dots
 	configurations soon :)
 
 	[ ======================================== ]
+
+	Note: Flatpaks need to have access to entire
+		  home directory, as well as specified
+		  theme.
