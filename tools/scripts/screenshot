@@ -75,7 +75,7 @@ invalid_args() {
 }
 
 # Saved pictures go here
-xdg_pictures="$(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png"
+xdg_pictures="$(xdg-user-dir PICTURES)/screenshots/ps_$(date +"%Y%m%d%H%M%S").png"
 
 # Read 1st argument, evaluate the later arguments until a final command is reached.
 case "$1" in
