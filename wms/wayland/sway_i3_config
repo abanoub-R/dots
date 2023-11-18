@@ -107,10 +107,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id vol-ctrl --increase 0
 bindsym XF86AudioLowerVolume exec --no-startup-id vol-ctrl --decrease 0
 
 # Screenshots (w/ grim)
-bindsym $ps1 exec screenshot wayland fullscreen copy
-bindsym $ps2 exec screenshot wayland selection copy
-bindsym $ps3 exec screenshot wayland fullscreen save
-bindsym $ps4 exec screenshot wayland selection save
+bindsym $ps1 exec grimshot copy screen
+bindsym $ps2 exec grimshot copy area
+bindsym $ps3 exec grimshot save screen
+bindsym $ps4 exec grimshot save area
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
