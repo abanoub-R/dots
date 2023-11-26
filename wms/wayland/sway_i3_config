@@ -33,7 +33,7 @@ set $ps4 Alt+Control+Print
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output HDMI-A-1 {
-	bg ~/pictures/wallpapers/wallhaven-13v3mv.jpg fill
+	#	bg ~/pictures/wallpapers/wallhaven-13v3mv.jpg fill
 		mode 1920x1080@75Hz
 }
 
@@ -76,7 +76,7 @@ exec /usr/libexec/flatpak-portal -r
 exec "sh -c 'sleep 5;exec /usr/libexec/xdg-desktop-portal -r'"
 
 # Gaps
-gaps inner 5
+gaps inner 0
 
 # No title bar
 default_border none
@@ -107,10 +107,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id vol-ctrl --increase 0
 bindsym XF86AudioLowerVolume exec --no-startup-id vol-ctrl --decrease 0
 
 # Screenshots (w/ grim)
-bindsym $ps1 exec grimshot copy screen
-bindsym $ps2 exec grimshot copy area
-bindsym $ps3 exec grimshot save screen
-bindsym $ps4 exec grimshot save area
+#bindsym $ps1 exec grimshot copy screen
+#bindsym $ps2 exec grimshot copy area
+#bindsym $ps3 exec grimshot save screen
+#bindsym $ps4 exec grimshot save area
+bindsym $ps1 exec screenshot wayland fullscreen copy
+bindsym $ps2 exec screenshot wayland selection copy
+bindsym $ps3 exec screenshot wayland fullscreen save
+bindsym $ps4 exec screenshot wayland selection copy
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -240,7 +244,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
 	position bottom
-		gaps 5 5
+		gaps 0 0 
 
 # When the status_command prints a new line to stdout, swaybar updates.
 # The default just shows the current date and time.

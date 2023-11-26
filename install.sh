@@ -38,12 +38,6 @@ else
       echo "Copying xdg files to ~/.config (3/3)"
       cp cfg/config/user-dirs* ~/.config
 
-      # cfg/etc
-      echo "Copying cfg/etc/environment to /etc/environment"
-
-      # This requires root privledges, but for one time use
-      su -c "sudo cp cfg/etc/environment /etc/environment"
-
       # cfg/home
       echo "Copying bash files (1/2)"
       cp cfg/home/.bash* ~/

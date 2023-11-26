@@ -9,14 +9,14 @@ fi
 # run x
 # startx
 
-# set temp dir, uncomment if running wayland without a session manager.
-# mkdir -p /tmp/${UID}-runtime-dir
-# export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+# set temp dir, un/comment if running wayland with/without a session manager.
+mkdir -p /tmp/${UID}-runtime-dir
+export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
 
-# start pipewire (should be started from wm instead)
-# dbus-run-session pipewire &
+# per user environment variables
+export LIBSEAT_BACKEND=seatd
+export GDK_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
 
 # auto-start compositor on first tty
-# if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-#    dbus-run-session sway
-# fi
+dbus-run-session sway
