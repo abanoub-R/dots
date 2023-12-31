@@ -89,7 +89,7 @@ case "$1" in
 				case "$3" in
 					"copy")
 						echo "Executing wayland fullscreen copy shot using 'grim'."
-						grim - | wl-copy
+						grim -t png - | wl-copy -t image/png 
 					;;
 
 					"save")
@@ -108,7 +108,7 @@ case "$1" in
 				case "$3" in
 					"copy")
 						echo "Executing wayland selection copy shot using 'grim'."
-						grim -g "$(slurp)" - | wl-copy
+						grim -g "$(slurp)" -t png - | wl-copy -t image/png
 					;;
 
 					"save")
