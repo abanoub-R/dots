@@ -20,3 +20,4 @@ export PS1="\[$(tput bold)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]
 
 # Aliases
 alias cpu-temp='cat /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input'
+alias ls='ls --color'

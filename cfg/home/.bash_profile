@@ -11,12 +11,15 @@ fi
 
 # set temp dir, un/comment if running wayland with/without a session manager.
 mkdir -p /tmp/${UID}-runtime-dir
-export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+
+# non systemd: export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 # per user environment variables
-export LIBSEAT_BACKEND=seatd
+export LIBSEAT_BACKEND=logind
 export GDK_BACKEND=wayland
 export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # auto-start compositor on first tty
 dbus-run-session sway
