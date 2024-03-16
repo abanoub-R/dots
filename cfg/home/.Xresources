@@ -47,3 +47,6 @@ URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
 ! white
 *color7:       #d3d7cf
 *color15:      #eeeeec
+
+! set cursor (needed for xwayland)
+Xcursor.theme: Adwaita
