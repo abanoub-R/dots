@@ -33,7 +33,7 @@ set $ps4 Alt+Control+Insert
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output HDMI-A-1 {
-		bg ~/pictures/macos.png fill
+		# bg ~/pictures/wallhaven.png fill
 		mode 1920x1080@75Hz
 }
 
@@ -76,7 +76,7 @@ exec /usr/libexec/flatpak-portal -r
 exec "sh -c 'sleep 5;exec /usr/libexec/xdg-desktop-portal -r'"
 
 # Gaps
-gaps inner 0
+# gaps inner 8
 
 # No title bar
 default_border none
@@ -88,6 +88,9 @@ default_floating_border none
 # Change normal to inverse to use left mouse button for resizing and right
 # mouse button for dragging.
 floating_modifier $mod normal
+
+# Lock screen
+bindsym $mod+F1 exec swaylock
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -197,7 +200,7 @@ bindsym $mod+a focus parent
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
-# Force all windows to float
+# Float
 for_window [workspace="1"] floating enable
 for_window [workspace="2"] floating enable
 for_window [workspace="3"] floating enable
@@ -208,6 +211,13 @@ for_window [workspace="7"] floating enable
 for_window [workspace="8"] floating enable
 for_window [workspace="9"] floating enable
 for_window [workspace="10"] floating enable
+
+# Tile windows in their respective direction
+bindsym $mod+Shift+Up move position center; resize set 1920 1080
+bindsym $mod+Shift+Down move position pointer; resize set 840 680
+bindsym $mod+Shift+Left resize set 960 1080; move absolute position 0 0
+bindsym $mod+Shift+Right resize set 960 1080; move absolute position 960 0 
+
 #
 # Scratchpad:
 #
@@ -272,9 +282,6 @@ bar {
 # exec_always --no-startup-id autotiling
 
 # Start pipewire
-exec_always --no-startup-id dbus-run-session pipewire
-
-# Start Python venv, this should always be last.
-# exec_always --no-startup-id ~/.config/sway/venv.sh
+exec --no-startup-id gentoo-pipewire-launcher &
 
 include /etc/sway/config.d/*

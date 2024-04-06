@@ -1,0 +1,10 @@
+[colors.primary]
+# background = "#f2f2f2"
+# foreground = "#292929"
+
+[window.padding]
+x = 8
+y = 8
+
+[font]
+normal = { family = "Noto Sans Mono", style = "Regular" }
