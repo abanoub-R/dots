@@ -8,6 +8,7 @@ decoration,
 window,
 window.background
 {
+    /* Change to 4 to fit KDE */
     border-radius: 0;
 }
 
